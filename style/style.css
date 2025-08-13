@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  cursor: auto;
+}
+
+:root {
+  --body-color: #0e2636;
+  --primary-color: rgb(0, 255, 0);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--body-color);
+}
+
+.container {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, transparent, transparent, #0005);
+}
+
+.cloud {
+  position: relative;
+  top: 50px;
+  z-index: 100;
+  width: 320px;
+  height: 100px;
+  background-color: var(--primary-color);
+  border-radius: 100px;
+  filter: drop-shadow(0 0 30px var(--primary-color));
+}
+.cloud::before {
+  content: "";
+  width: 110px;
+  height: 110px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: 40px;
+  box-shadow: 90px 0 0 30px var(--primary-color);
+}
+
+.cloud .text {
+  position: absolute;
+  top: 40px;
+  height: 20px;
+  line-height: 20px;
+
+  text-transform: uppercase;
+  color: var(--primary-color);
+  text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+  transform-origin: bottom;
+  animation: animate 2s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateY(290px);
+  }
+
+  100% {
+    transform: translateY(290px);
+  }
+}
+
